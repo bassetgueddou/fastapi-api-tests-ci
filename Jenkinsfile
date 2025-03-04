@@ -1,5 +1,8 @@
 pipeline {
-    triggers { upstream(upstreamProjects: 'fastapi-cicd', threshold: hudson.model.Result.SUCCESS) }
+    triggers { 
+        upstream(upstreamProjects: 'fastapi-cicd', threshold: hudson.model.Result.SUCCESS) 
+    }
+
     agent {
         docker {
             image 'postman/newman'
@@ -7,7 +10,8 @@ pipeline {
         }
     }
 
-        stage('API Tests exec') {
+    stages {
+        stage('API Tests exec') {  
             steps {
                 dir('tests') {
                     sh 'newman run collections/collection.json -r cli,junit --reporter-junit-export="newman-report.xml"'
