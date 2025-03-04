@@ -11,9 +11,16 @@ pipeline {
     }
 
     stages {
+        stage('Check Newman Version') {
+            steps {
+                sh 'newman -v'
+            }
+        }
+
         stage('API Tests exec') {  
             steps {
                 dir('tests') {
+                    sh 'ls -R'
                     sh 'newman run collection.json -r cli,junit --reporter-junit-export="newman-report.xml"'
                 }
             }
@@ -22,6 +29,7 @@ pipeline {
 
     post {
         always {
+            sh 'ls -l tests/'
             junit 'tests/newman-report.xml' 
         }
     }
