@@ -34,10 +34,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8001/",
+					"raw": "http://192.168.1.97:8001/",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"192.168.1.97"
 					],
 					"port": "8001",
 					"path": [
@@ -74,10 +74,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8001/login",
+					"raw": "http://192.168.1.97:8001/login",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"192.168.1.97"
 					],
 					"port": "8001",
 					"path": [
