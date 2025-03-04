@@ -21,7 +21,7 @@ pipeline {
             steps {
                 dir('tests') {
                     sh 'ls -R'
-                    sh 'newman run collection.json -r cli,junit --reporter-junit-export="newman-report.xml"'
+                    sh 'newman run collections/collection.json -r cli,junit --reporter-junit-export="newman-report.xml"'
                 }
             }
         }
