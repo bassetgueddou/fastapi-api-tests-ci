@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "fc906449-5ecd-485c-94b7-50fadb247941",
+		"name": "1TestApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33061695",
+		"_collection_link": "https://www.postman.com/bassetgueddou/workspace/testfastapi/collection/33061695-fc906449-5ecd-485c-94b7-50fadb247941?action=share&source=collection_link&creator=33061695"
+	},
+	"item": [
+		{
+			"name": "ApiPageMsgTest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify the message in the response body\", function () {\r",
+							"    pm.expect(pm.response.json().message).to.eql(\"Hello World from continus deployment\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginPageTestMsg",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response message is 'Login page'\", function () {\r",
+							"    pm.expect(pm.response.json().message).to.equal(\"Login page\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
