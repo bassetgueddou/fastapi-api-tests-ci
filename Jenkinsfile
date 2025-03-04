@@ -1,4 +1,5 @@
 pipeline {
+    triggers { upstream(upstreamProjects: 'fastapi-cicd', threshold: hudson.model.Result.SUCCESS) }
     agent {
         docker {
             image 'postman/newman'
